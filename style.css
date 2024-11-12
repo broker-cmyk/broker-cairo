@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#company-name {
+    font-size: 2em;
+    margin: 0;
+}
+
+#app-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#contact-section {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+#filter-section {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.filter-btn {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.filter-item {
+    width: 30%;
+}
+
+.apply-filter-btn {
+    width: 100%;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.property-images-container {
+    display: flex;
+    overflow-x: scroll;
+}
+.property-image img {
+    width: 300px; 
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.property-image {
+    max-height: 1000px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.property-image:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+#property-list {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.request-list {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.request-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.request-item button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+.request-item button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.request-item button:hover {
+    background-color: darkred;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* تكييف الصفحة للهواتف */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filter-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .property-images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .property-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+/* تنسيق زر الحذف */
+.delete-property-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.delete-property-btn:hover {
+    background-color: darkred;
+}

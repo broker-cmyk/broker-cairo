@@ -1,0 +1,132 @@
+<body>
+    <header>
+        <h1 id="company-name">Broker</h1>
+        <h2 id="app-name">عقارات القاهرة</h2>
+        <div id="contact-section" class="contact-section">
+            <ul>
+                <li>مهد: 01559608981 - 01156342313</li>
+                <li>احمد حشاد: 01115045673</li>
+            </ul>
+        </div>
+        <button id="admin-login-btn" onclick="toggleLoginForm()">تسجيل دخول المسؤول</button>
+    </header>
+
+    <!-- نموذج تسجيل الدخول للمسؤول -->
+    <section id="admin-login" class="hidden">
+        <div class="login-box">
+            <h3>تسجيل دخول المسؤول</h3>
+            <form id="admin-login-form" action="#">
+                <label for="admin-name"></label>
+                <input type="text" id="admin-name" placeholder="أدخل اسم المسؤول" required>
+                <label for="admin-password">:</label>
+                <input type="password" id="admin-password" placeholder="أدخل كلمة السر" required>
+                <button type="button" class="login-btn" onclick="checkAdminLogin()">تسجيل الدخول</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- قسم الفلاتر -->
+    <section id="filter-section">
+        <button onclick="toggleFilters()" class="filter-btn">عرض الفلاتر</button>
+        <div id="filters" class="filters hidden">
+            <div class="filter-item">
+                <label for="price-min">السعر (الحد الأدنى):</label>
+                <input type="number" id="price-min" placeholder="أدخل الحد الأدنى للسعر">
+            </div>
+            <div class="filter-item">
+                <label for="price-max">السعر (الحد الأقصى):</label>
+                <input type="number" id="price-max" placeholder="أدخل الحد الأقصى للسعر">
+            </div>
+            <div class="filter-item">
+                <label for="location">الموقع:</label>
+                <input type="text" id="location" placeholder="أدخل الموقع" list="location-options">
+                <datalist id="location-options">
+                    <option value="حلوان">
+                    <option value="وادي حوف">
+                    <option value="حدائق حلوان">
+                    <option value="15 مايو">
+                    <option value="المعادي">
+                    <option value="المناطق الحديثة بالقاهرة">
+                    <option value="الجيزة">
+                </datalist>
+            </div>
+            <div class="filter-item">
+                <label for="size">المساحة (م²):</label>
+                <input type="number" id="size" placeholder="أدخل المساحة">
+            </div>
+            <div class="filter-item">
+                <label for="sort">ترتيب السعر:</label>
+                <select id="sort">
+                    <option value="asc">من الأقل إلى الأعلى</option>
+                    <option value="desc">من الأعلى إلى الأدنى</option>
+                </select>
+            </div>
+            <button onclick="applyFilters()" class="apply-filter-btn">تطبيق الفلاتر</button>
+        </div>
+    </section>
+
+    <!-- مكان لعرض العقارات -->
+    <section id="property-list">
+        <h3>آخر العقارات المضافة</h3>
+        <div id="latest-properties">
+            <!-- العقارات سيتم إضافتها هنا عبر JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم عرض الطلبات للمسؤول (يظهر فقط للمسؤول) -->
+    <section id="admin-requests-section" class="hidden">
+        <h2>الطلبات</h2>
+        <div id="admin-requests-list" class="request-list"></div>
+    </section>
+
+    <!-- قسم إضافة عقار جديد (يظهر فقط للمسؤول) -->
+    <section id="add-property-section" class="hidden">
+        <h2>إضافة عقار جديد</h2>
+        <form id="add-property-form">
+            <label for="property-location">الموقع:</label>
+            <input type="text" id="property-location" required>
+            <label for="property-price">السعر:</label>
+            <input type="number" id="property-price" required>
+            <label for="property-size">المساحة:</label>
+            <input type="number" id="property-size" required>
+            <label for="property-description">الوصف:</label>
+            <textarea id="property-description" required></textarea>
+            <label for="property-images">تحميل الصور:</label>
+            <input type="file" id="property-images-1" accept="image/*">
+            <input type="file" id="property-images-2" accept="image/*">
+            <input type="file" id="property-images-3" accept="image/*">
+            <input type="file" id="property-images-4" accept="image/*">
+            <input type="file" id="property-images-5" accept="image/*">
+            <input type="file" id="property-images-6" accept="image/*">
+            <input type="file" id="property-images-7" accept="image/*">
+            <input type="file" id="property-images-8" accept="image/*">
+            <input type="file" id="property-images-9" accept="image/*">
+            <input type="file" id="property-images-10" accept="image/*">
+            <label for="property-video">تحميل الفيديو:</label>
+            <input type="file" id="property-video" accept="video/*">
+            <button type="submit">إضافة العقار</button>
+        </form>
+    </section>
+
+    <!-- قسم تقديم الطلبات للمستخدمين -->
+    <section id="user-request-section">
+        <h2>أدخل طلبك</h2>
+        <form id="user-request-form">
+            <label for="user-request">الطلب:</label>
+            <textarea id="user-request" required placeholder="أدخل طلبك هنا"></textarea>
+            <label for="user-phone">:</label>
+            <input type="tel" id="user-phone" required placeholder="أدخل رقم هاتفك">
+            <button type="submit">إرسال الطلب</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 عقارات القاهرة - Broker</p>
+    </footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">  
+
+    <script src="script.js"></script>
+</body>
