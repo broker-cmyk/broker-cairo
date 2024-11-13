@@ -9,11 +9,11 @@ header {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 80px;
 }
 
 #company-name {
-    font-size: 2em;
+    font-size: 3em;
     margin: 0;
 }
 
